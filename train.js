@@ -16,7 +16,21 @@
 // countLetter("o", "Komiljonov");
 
 
+//TASK B
+function countDigits(str) {
+    let count = 0;
 
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] >= '0' && str[i] <= '9') {
+            count++;
+        }
+    }
+
+    console.log(`The string contains ${count} digit(s).`);
+}
+
+countDigits("Hello123World456");
+countDigits("Muhammadsaid20Nurddinov09 Siddikjon15 Ugli04 !");
 
 
 /* 21 chi Dars Nodejs event Loop va callback */
