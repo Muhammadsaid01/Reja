@@ -1,16 +1,19 @@
-function countLetter(letter, word) {
-    let count = 0;
+//TASK A
 
-    for (let i = 0; i < word.length; i++) {
-        if (word[i].toLowerCase() === letter.toLowerCase()) {
-            count++;
-        }
-    }
 
-    console.log(`Letter "${letter}" appears ${count} times.`);
-}
+// function countLetter(letter, word) {
+//     let count = 0;
 
-countLetter("o", "Komiljonov");
+//     for (let i = 0; i < word.length; i++) {
+//         if (word[i].toLowerCase() === letter.toLowerCase()) {
+//             count++;
+//         }
+//     }
+
+//     console.log(`Letter "${letter}" appears ${count} times.`);
+// }
+
+// countLetter("o", "Komiljonov");
 
 
 
