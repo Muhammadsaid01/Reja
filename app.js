@@ -38,25 +38,17 @@ app.set("view engine", "ejs");
 app.post('/create-item', (req, res) => {
 
     console.log("user entered /create-item route");
-   const new_reja = req.body.reja;
-   db.collection("plans").insertOne({ reja : new_reja }, (err, data) => {
-        if(err) {
-            console.log(err);
-            res.end("Something went wrong");
-        } else{
-            console.log(data);
-            res.end("successfully added");
-        }
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({ reja : new_reja }, (err, data) => {
+    
+    console.log(data.ops);
+     res.json(data.ops[0]);
     });
 });
 
-app.get("/author", (req, res) => {
-     console.log("user entered /author route");
-    res.render("author.ejs", { user : user  });
-});
 
 app.get('/', function(req, res) {
-        console.log("user entered / route");
+    console.log("user entered / route");
     db.collection("plans")
     .find()
     .toArray((err, data) => {
@@ -69,5 +61,9 @@ app.get('/', function(req, res) {
     });
 });
 
+app.get("/author", (req, res) => {
+     console.log("user entered /author route");
+    res.render("author.ejs", { user : user  });
+});
 
 module.exports = app;
