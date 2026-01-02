@@ -17,20 +17,56 @@
 
 
 //TASK B
-function countDigits(str) {
-    let count = 0;
+// function countDigits(str) {
+//     let count = 0;
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] >= '0' && str[i] <= '9') {
-            count++;
-        }
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] >= '0' && str[i] <= '9') {
+//             count++;
+//         }
+//     }
+
+//     console.log(`The string contains ${count} digit(s).`);
+// }
+
+// countDigits("Hello123World456");
+// countDigits("Muhammadsaid20Nurddinov09 Siddikjon15 Ugli04 !");
+
+
+
+//TASK C
+class MsNSHop {
+
+     time = new Date().toLocaleTimeString();
+
+    constructor(bread, cola, ramen) {
+        this.bread = bread;
+        this.cola = cola;
+        this.ramen = ramen;
     }
 
-    console.log(`The string contains ${count} digit(s).`);
-}
+    qoldiq() {
+        console.log(` hozir ${this.time} da  ${this.bread} dona non, ${this.cola}dona kola va ${this.ramen}dona ramen mavjud`);
+    }
 
-countDigits("Hello123World456");
-countDigits("Muhammadsaid20Nurddinov09 Siddikjon15 Ugli04 !");
+    sotish(breadSold, colaSold, ramenSold) {
+        this.bread -= breadSold;
+        this.cola -= colaSold;
+        this.ramen -= ramenSold;
+        }
+
+    qabul (breadBought, colaBought, ramenBought) {
+        this.bread += breadBought;
+        this.cola += colaBought;
+        this.ramen += ramenBought;   
+    }
+}
+let shop = new MsNSHop(6, 4, 5);
+shop.qoldiq();
+shop.sotish(5, 3, 2);
+shop.qoldiq();
+shop.qabul(10, 5, 5);
+shop.qoldiq();
 
 
 /* 21 chi Dars Nodejs event Loop va callback */
