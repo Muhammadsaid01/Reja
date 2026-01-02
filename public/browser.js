@@ -30,3 +30,26 @@ axios
         console.log("Iltimos qayta urinib ko'ring!");
     });
 });
+
+
+
+document.addEventListener("click", function(event) {
+    console.log(event);
+    if(event.target.classList.contains("delete-me")) {
+        if(confirm("Aniq o'chirmoqchimisiz?")) {
+            axios
+            .post('/delete-item', {id: event.target.getAttribute("data-id") })
+            .then((_response) => {
+                console.log(_response.data);
+                event.target.parentElement.parentElement.remove();
+            })
+            .catch( (err) => {
+                console.log("Iltimos qayta urinib ko'ring!");
+            });
+      } 
+   }
+
+    if(event.target.classList.contains("edit-me")) {
+        alert("siz edit tugmasini bosdingiz");
+    }
+});

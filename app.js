@@ -16,6 +16,7 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
 //MongoDB uchun o'rnatishlar qo'shilishi mumkin
 
 const db = require("./server").db();
+const mongodb = require("mongodb");
 
 
 
@@ -46,6 +47,12 @@ app.post('/create-item', (req, res) => {
     });
 });
 
+app.post('/delete-item', (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne({ _id: new require("mongodb").ObjectID(id) }, function(err, data) {
+        res.json({state: "success"  });
+    });
+});
 
 app.get('/', function(req, res) {
     console.log("user entered / route");
