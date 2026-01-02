@@ -53,12 +53,16 @@ class MsNSHop {
         this.bread -= breadSold;
         this.cola -= colaSold;
         this.ramen -= ramenSold;
-        }
+        
+        console.log(`hozir${this.time} vaqtda  ${breadSold} dona non, ${colaSold} dona kola, ${ramenSold} dona ramen sotildi.`);
+    }
 
     qabul (breadBought, colaBought, ramenBought) {
         this.bread += breadBought;
         this.cola += colaBought;
-        this.ramen += ramenBought;   
+        this.ramen += ramenBought;
+
+        console.log(`hozir${this.time} Yangi mahsulotlar olindi: ${breadBought} dona non, ${colaBought} dona kola, ${ramenBought} dona ramen.`);
     }
 }
 let shop = new MsNSHop(6, 4, 5);
