@@ -34,7 +34,7 @@ axios
 
 
 document.addEventListener("click", function(event) {
-    console.log(event);
+    // Delete button
     if(event.target.classList.contains("delete-me")) {
         if(confirm("Aniq o'chirmoqchimisiz?")) {
             axios
@@ -48,8 +48,35 @@ document.addEventListener("click", function(event) {
             });
       } 
    }
-
+// Edit button
     if(event.target.classList.contains("edit-me")) {
-        alert("siz edit tugmasini bosdingiz");
+       let userInput = prompt("O'zgartirish kiriting", event.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+         if(userInput) {
+            axios.post('/edit-item', {id: event.target.getAttribute("data-id"), newInput: userInput       
+            })
+            .then( (response) => {
+                console.log(response.data);
+                event.target
+                .parentElement.parentElement
+                .querySelector(".item-text")
+                .innerHTML = userInput;
+             })
+            .catch( (err) => {
+                console.log("Iltimos qayta urinib ko'ring!");
+            });
+        }
+
+       
     }
 });
+
+
+
+ document.getElementById("clear-all").addEventListener("click", function() {
+    axios.post("/delete-all", {delete_all: true}).then( (response) => {
+        alert(response.data.state);
+        document.location.reload();
+    }).catch( () => {
+            console.log("Iltimos qayta urinib ko'ring!");
+        });
+ });
