@@ -35,42 +35,61 @@
 
 
 //TASK C
-class MsNSHop {
+// class MsNSHop {
 
-     time = new Date().toLocaleTimeString();
+//      time = new Date().toLocaleTimeString();
 
-    constructor(bread, cola, ramen) {
-        this.bread = bread;
-        this.cola = cola;
-        this.ramen = ramen;
-    }
+//     constructor(bread, cola, ramen) {
+//         this.bread = bread;
+//         this.cola = cola;
+//         this.ramen = ramen;
+//     }
 
-    qoldiq() {
-        console.log(` hozir ${this.time} da  ${this.bread} dona non, ${this.cola}dona kola va ${this.ramen}dona ramen mavjud`);
-    }
+//     qoldiq() {
+//         console.log(` hozir ${this.time} da  ${this.bread} dona non, ${this.cola}dona kola va ${this.ramen}dona ramen mavjud`);
+//     }
 
-    sotish(breadSold, colaSold, ramenSold) {
-        this.bread -= breadSold;
-        this.cola -= colaSold;
-        this.ramen -= ramenSold;
+//     sotish(breadSold, colaSold, ramenSold) {
+//         this.bread -= breadSold;
+//         this.cola -= colaSold;
+//         this.ramen -= ramenSold;
         
-        console.log(`hozir${this.time} vaqtda  ${breadSold} dona non, ${colaSold} dona kola, ${ramenSold} dona ramen sotildi.`);
+//         console.log(`hozir${this.time} vaqtda  ${breadSold} dona non, ${colaSold} dona kola, ${ramenSold} dona ramen sotildi.`);
+//     }
+
+//     qabul (breadBought, colaBought, ramenBought) {
+//         this.bread += breadBought;
+//         this.cola += colaBought;
+//         this.ramen += ramenBought;
+
+//         console.log(`hozir${this.time} Yangi mahsulotlar olindi: ${breadBought} dona non, ${colaBought} dona kola, ${ramenBought} dona ramen.`);
+//     }
+// }
+// let shop = new MsNSHop(6, 4, 5);
+// shop.qoldiq();
+// shop.sotish(5, 3, 2);
+// shop.qoldiq();
+// shop.qabul(10, 5, 5);
+// shop.qoldiq();
+
+//Task D
+ function checkContent(word1, word2) {
+        let arr1 = word1.toLowerCase().split("").sort();
+        let arr2 = word2.toLowerCase().split("").sort();
+
+        if (arr1.join("") === arr2.join("")) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    qabul (breadBought, colaBought, ramenBought) {
-        this.bread += breadBought;
-        this.cola += colaBought;
-        this.ramen += ramenBought;
+     const result1 = checkContent("Musaidhammad", "saidMuhammad");
+        console.log(result1); // true
+        const result2 = checkContent("Hello", "World"); 
+        console.log(result2); // false
 
-        console.log(`hozir${this.time} Yangi mahsulotlar olindi: ${breadBought} dona non, ${colaBought} dona kola, ${ramenBought} dona ramen.`);
-    }
-}
-let shop = new MsNSHop(6, 4, 5);
-shop.qoldiq();
-shop.sotish(5, 3, 2);
-shop.qoldiq();
-shop.qabul(10, 5, 5);
-shop.qoldiq();
 
 
 /* 21 chi Dars Nodejs event Loop va callback */
