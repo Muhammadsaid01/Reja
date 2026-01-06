@@ -72,23 +72,40 @@
 // shop.qabul(10, 5, 5);
 // shop.qoldiq();
 
-//Task D
- function checkContent(word1, word2) {
-        let arr1 = word1.toLowerCase().split("").sort();
-        let arr2 = word2.toLowerCase().split("").sort();
+// //Task D
+//  function checkContent(word1, word2) {
+//         let arr1 = word1.toLowerCase().split("").sort();
+//         let arr2 = word2.toLowerCase().split("").sort();
 
-        if (arr1.join("") === arr2.join("")) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+//         if (arr1.join("") === arr2.join("")) {
+//             return true;
+//         }
+//         else {
+//             return false;
+//         }
+//     }
 
-     const result1 = checkContent("Musaidhammad", "saidMuhammad");
-        console.log(result1); // true
-        const result2 = checkContent("Hello", "World"); 
-        console.log(result2); // false
+//      const result1 = checkContent("Musaidhammad", "saidMuhammad");
+//         console.log(result1); // true
+//         const result2 = checkContent("Hello", "World"); 
+//         console.log(result2); // false
+
+// Task E
+// function reverseWords(words) {
+//      words.split(" ");
+//     let reversedWords = words.map(word => word.split("").reverse().join(""));
+//     return reversedWords.join(" ");
+// }
+
+// console.log(reverseWords("Hello muhammadsaid")); 
+
+function getReverse(word) {
+    return word.split("").reverse().join("");
+
+}
+console.log( getReverse("Hello"));
+console.log( getReverse("diasdammahuM"));
+
 
 
 
