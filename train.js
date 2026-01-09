@@ -99,13 +99,29 @@
 
 // console.log(reverseWords("Hello muhammadsaid")); 
 
-function getReverse(word) {
-    return word.split("").reverse().join("");
+// function getReverse(word) {
+//     return word.split("").reverse().join("");
 
+// }
+// console.log( getReverse("Hello"));
+// console.log( getReverse("diasdammahuM"));
+
+
+//Task F
+function findDoublers(word) {
+  for (let i = 0; i < word.length; i++) {
+    for (let j = i + 1; j < word.length; j++) {
+      if (word[i] === word[j]) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
-console.log( getReverse("Hello"));
-console.log( getReverse("diasdammahuM"));
 
+console.log(findDoublers("hello")); 
+console.log(findDoublers("muhammadsaid"));   
+    
 
 
 
