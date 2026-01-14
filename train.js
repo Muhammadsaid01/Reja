@@ -107,21 +107,37 @@
 // console.log( getReverse("diasdammahuM"));
 
 
-//Task F
-function findDoublers(word) {
-  for (let i = 0; i < word.length; i++) {
-    for (let j = i + 1; j < word.length; j++) {
-      if (word[i] === word[j]) {
-        return true;
-      }
-    }
-  }
-  return false;
-}
+// //Task F
+// function findDoublers(word) {
+//   for (let i = 0; i < word.length; i++) {
+//     for (let j = i + 1; j < word.length; j++) {
+//       if (word[i] === word[j]) {
+//         return true;
+//       }
+//     }
+//   }
+//   return false;
+// }
 
-console.log(findDoublers("hello")); 
-console.log(findDoublers("muhammadsaid"));   
-    
+// console.log(findDoublers("hello")); 
+// console.log(findDoublers("muhammadsaid"));   
+
+//Task h
+
+// function getPositive (arr) {
+//   let result = "";
+//      for( let i = 0; i < arr.length; i ++) {
+//          if (arr[i] > 0){
+//             result += arr[i];
+//          }
+  
+//      }
+//      return result;
+// }
+// console.log(getPositive([1, -4, 2])); 
+
+
+// console.log(getPositive([5, -4, 110])); 
 
 
 
